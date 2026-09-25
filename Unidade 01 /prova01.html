@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo - Aprendizado Profundo</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; }
+        .question-card { background: #fafafa; border: 1px solid #e1e4e8; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .question-title { font-weight: bold; margin-bottom: 15px; color: #1a252f; line-height: 1.5; }
+        .options label { display: block; background: #fff; border: 1px solid #d1d5db; padding: 10px 15px; border-radius: 6px; margin-bottom: 8px; cursor: pointer; transition: 0.2s; }
+        .options label:hover { background: #f3f4f6; border-color: #9ca3af; }
+        input[type="radio"] { margin-right: 10px; }
+        button { display: block; width: 100%; background: #2563eb; color: white; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+        button:hover { background: #1d4ed8; }
+        #result { margin-top: 20px; font-size: 18px; font-weight: bold; text-align: center; }
+        .math { font-family: monospace; background: #e5e7eb; padding: 2px 5px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Quiz: Aprendizado Profundo - Unidade I</h1>
+    <form id="quizForm">
+
+        <!-- Questão 1 -->
+        <div class="question-card">
+            <div class="question-title">Questão 1: Considere uma rede neural com duas entradas x₁, x₂, pesos w₁, w₂, um viés b e sem função de ativação (\sigma(z) = z): ŷ = z = w₁x₁ + w₂x₂ + b. A função de custo é o erro quadrático médio para um único exemplo é dada por: J = ½(ŷ - y)². Calcule a derivada da função de custo em relação a w₁, ou seja, ∂J/∂w₁.</div>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A) (ŷ - y) · ŷ · x₁</label>
+                <label><input type="radio" name="q1" value="B"> B) (ŷ - y) · x₁</label>
+                <label><input type="radio" name="q1" value="C"> C) 2(ŷ - y) · x₁</label>
+                <label><input type="radio" name="q1" value="D"> D) (ŷ - y) · (1 - ŷ) · x₁</label>
+            </div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="question-card">
+            <div class="question-title">Questão 2: Considere que \phi(x) representa a função de mapeamento de características (feature mapping), responsável por transformar o dado bruto x em um vetor de representação em um espaço latente. Sobre a relação entre Machine Learning (ML), Representation Learning (RL) e Deep Learning (DL), marque a alternativa incorreta:</div>
+            <div class="options">
+                <label><input type="radio" name="q2" value="A"> A) No ML tradicional, assume-se muitas vezes uma função de decisão do tipo f(x) = \phi(x)ᵀw, onde \phi(x) é uma transformação de features definida manualmente.</label>
+                <label><input type="radio" name="q2" value="B"> B) Em DL, a extração de features \phi(x) é composta por múltiplas camadas aprendidas, isto é, \phi(x) = \phi_L \circ ... \circ \phi_1(x).</label>
+                <label><input type="radio" name="q2" value="C"> C) A vantagem de \phi(x) em ML sobre o DL é que a rede neural transforma a extração de características em uma sequência de operações lineares, evitando um processo manual.</label>
+                <label><input type="radio" name="q2" value="D"> D) Em RL, o objetivo é aprender uma função de extração de features \phi(x), automaticamente, de modo que a representação maximize a utilidade para a tarefa final.</label>
+            </div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="question-card">
+            <div class="question-title">Questão 3: O dilema conhecido como bias-variance tradeoff descreve a relação entre a complexidade de um modelo e sua capacidade de generalização. Sobre esse conceito, analise as alternativas abaixo e marque a incorreta:</div>
+            <div class="options">
+                <label><input type="radio" name="q3" value="A"> A) Modelos com alta variance tendem a se ajustar demais aos dados de treino, resultando em overfitting.</label>
+                <label><input type="radio" name="q3" value="B"> B) O bias-variance tradeoff é eliminado completamente apenas aumentando a quantidade de dados de treino.</label>
+                <label><input type="radio" name="q3" value="C"> C) Modelos com alto bias tendem a simplificar excessivamente o problema, resultando em underfitting.</label>
+                <label><input type="radio" name="q3" value="D"> D) O aumento da complexidade do modelo geralmente reduz o bias, mas pode aumentar a variance.</label>
+            </div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="question-card">
+            <div class="question-title">Questão 4: O espaço de erro (loss landscape) é a superfície definida pela função de custo em relação aos parâmetros de uma rede neural, onde cada ponto representa uma configuração específica dos pesos e vieses. Sobre esse tema, assinale a alternativa incorreta:</div>
+            <div class="options">
+                <label><input type="radio" name="q4" value="A"> A) Os mínimos locais são pontos onde a função de custo é menor que em sua vizinhança, mas podem não ser a melhor solução global.</label>
+                <label><input type="radio" name="q4" value="B"> B) Os pontos de sela possuem direções de curvatura positiva e negativa, fazendo com que o gradiente possa indicar caminhos de descida ou subida.</label>
+                <label><input type="radio" name="q4" value="C"> C) Os platós são regiões quase planas do loss landscape, onde o gradiente é muito pequeno, dificultando o avanço do treinamento.</label>
+                <label><input type="radio" name="q4" value="D"> D) Os mínimos globais são sempre alcançáveis em redes neurais profundas, desde que se utilize um número suficiente de épocas.</label>
+            </div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="question-card">
+            <div class="question-title">Questão 5: Sobre técnicas de normalização em redes neurais de Input Normalization, Batch Normalization e Layer Normalization, analise as afirmações:<br>
+            I. Input Normalization consiste em normalizar as features de entrada, antes do treinamento da rede.<br>
+            II. Batch Normalization normaliza as ativações considerando a média e variância calculadas em todos os dados de treinamento.<br>
+            III. Layer Normalization normaliza as ativações ao longo de todas as features de um mesmo exemplo, em vez de ao longo do batch.<br>
+            IV. Batch Normalization funciona da mesma forma em treinamento e inferência, sempre usando a estatística do mini-batch atual.<br>
+            V. Layer Normalization é frequentemente utilizada em arquiteturas de Transformers, pois não depende do tamanho do batch. Quais estão corretas?</div>
+            <div class="options">
+                <label><input type="radio" name="q5" value="A"> A) Apenas I, II, III e V.</label>
+                <label><input type="radio" name="q5" value="B"> B) Apenas I, III e IV.</label>
+                <label><input type="radio" name="q5" value="C"> C) Apenas I, II e V.</label>
+                <label><input type="radio" name="q5" value="D"> D) Apenas I, III e V.</label>
+            </div>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="question-card">
+            <div class="question-title">Questão 6: Considere uma rede neural composta por múltiplas camadas, com função de ativação para todas as camadas sendo a função identidade, g(z) = z. Analise as afirmações:<br>
+            I. Ao substituir a ativação identidade por não-linear, a rede deixa de ser equivalente a um modelo linear e passa a representar transformações não-lineares.<br>
+            II. Esta rede não consegue aprender fronteiras de decisão não-lineares.<br>
+            III. O uso do gradiente descendente para treinar esta rede ainda é válido, mas o modelo resultante não terá maior poder de representação do que um modelo linear de uma única camada.<br>
+            IV. Ao adicionar mais camadas lineares com ativação identidade, o modelo passa a representar funções mais complexas.</div>
+            <div class="options">
+                <label><input type="radio" name="q6" value="A"> A) Todas as afirmações são verdadeiras.</label>
+                <label><input type="radio" name="q6" value="B"> B) Apenas II, III e IV são verdadeiras.</label>
+                <label><input type="radio" name="q6" value="C"> C) Apenas I, II e III são verdadeiras.</label>
+                <label><input type="radio" name="q6" value="D"> D) Apenas I, II e IV são verdadeiras.</label>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="question-card">
+            <div class="question-title">Questão 7: O algoritmo Adagrad adapta a taxa de aprendizado acumulando os quadrados dos gradientes (Gt = Σ g_τ²). O problema é que Gt cresce indefinidamente, estagnando o treinamento. Qual técnica foi proposta especificamente para resolver isso?</div>
+            <div class="options">
+                <label><input type="radio" name="q7" value="A"> A) Reinicializar os gradientes a cada época, para evitar acúmulo infinito.</label>
+                <label><input type="radio" name="q7" value="B"> B) Substituir a soma acumulada por uma média móvel dos quadrados dos gradientes, como feito no RMSProp.</label>
+                <label><input type="radio" name="q7" value="C"> C) Utilizar apenas momentum, sem ajuste dinâmico da taxa de aprendizado.</label>
+                <label><input type="radio" name="q7" value="D"> D) Aumentar continuamente a taxa de aprendizado inicial η durante o treinamento.</label>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="question-card">
+            <div class="question-title">Questão 8: O Adam é um algoritmo de otimização que combina momentum e RMSProp, utilizando médias móveis de 1ª e 2ª ordem. Sobre o funcionamento do Adam, assinale a alternativa incorreta:</div>
+            <div class="options">
+                <label><input type="radio" name="q8" value="A"> A) O Adam pode, em alguns casos, levar a soluções que generalizam pior do que o SGD com momentum, mesmo convergindo mais rápido.</label>
+                <label><input type="radio" name="q8" value="B"> B) O Adam ajusta dinamicamente a taxa de aprendizado de cada parâmetro, levando em conta tanto a direção quanto a escala recente dos gradientes.</label>
+                <label><input type="radio" name="q8" value="C"> C) O Adam dispensa completamente a escolha de hiperparâmetros, já que sempre converge bem independentemente de η, β₁ e β₂.</label>
+                <label><input type="radio" name="q8" value="D"> D) O Adam utiliza uma média móvel dos gradientes (m_t) e uma média móvel dos quadrados dos gradientes (v_t) para adaptar os passos.</label>
+            </div>
+        </div>
+
+        <!-- Questão 9 -->
+        <div class="question-card">
+            <div class="question-title">Questão 9: O momentum é uma técnica de otimização que acumula informação dos gradientes passados para suavizar oscilações e acelerar o movimento em direções consistentes. Qual alternativa descreve corretamente seu efeito?</div>
+            <div class="options">
+                <label><input type="radio" name="q9" value="A"> A) O momentum suaviza as oscilações em direções instáveis e acelera o treinamento em direções onde a descida é consistente.</label>
+                <label><input type="radio" name="q9" value="B"> B) O momentum impede o modelo de sair de mínimos locais, estabilizando os pesos em uma solução fixa.</label>
+                <label><input type="radio" name="q9" value="C"> C) O momentum garante convergência para o mínimo global em qualquer função convexa ou não convexa.</label>
+                <label><input type="radio" name="q9" value="D"> D) O momentum aumenta deliberadamente oscilações para explorar melhor o espaço de parâmetros.</label>
+            </div>
+        </div>
+
+        <!-- Questão 10 -->
+        <div class="question-card">
+            <div class="question-title">Questão 10: Em um dado treinamento, a função de custo é J(θ) = L(θ) + λ Σ |w_j|. Qual alternativa descreve corretamente o efeito dessa penalização sobre os pesos?</div>
+            <div class="options">
+                <label><input type="radio" name="q10" value="A"> A) Se trata de uma regularização L1 (Lasso), onde os pesos apenas encolhem suavemente em direção a zero, raramente se tornando nulos.</label>
+                <label><input type="radio" name="q10" value="B"> B) Se trata de uma regularização L1 (Lasso), onde os pesos tendem a ficar esparsos, levando muitos w_j exatamente a zero.</label>
+                <label><input type="radio" name="q10" value="C"> C) Se trata de uma regularização Elastic Net (L1+L2), onde o efeito é exclusivamente de diminuição suave, sem gerar esparsidade.</label>
+                <label><input type="radio" name="q10" value="D"> D) Se trata de uma regularização L2 (Ridge), onde os pesos tendem a ficar esparsos, levando vários w_j exatamente a zero.</label>
+            </div>
+        </div>
+
+        <!-- Questão 11 -->
+        <div class="question-card">
+            <div class="question-title">Questão 11: Considere uma rede neural feedforward com:<br>
+            1. Entrada com 100 neurônios<br>
+            2. 1ª oculta (l=1) com 50 neurônios<br>
+            3. 2ª oculta (l=2) com 20 neurônios<br>
+            4. Saída (l=3) com 5 neurônios.<br>
+            Cada camada, incluindo a de saída, possui um bias. Quantos parâmetros (pesos e biases) essa rede possui no total?</div>
+            <div class="options">
+                <label><input type="radio" name="q11" value="A"> A) 6100</label>
+                <label><input type="radio" name="q11" value="B"> B) 50000</label>
+                <label><input type="radio" name="q11" value="C"> C) 6175</label>
+                <label><input type="radio" name="q11" value="D"> D) 6075</label>
+            </div>
+        </div>
+
+        <!-- Questão 12 -->
+        <div class="question-card">
+            <div class="question-title">Questão 12: Um pesquisador treinou um modelo de rede neural e obteve 95% de acurácia no treino e apenas 62% na validação, com a perda de treino caindo e a de validação aumentando após certo ponto. Qual o diagnóstico?</div>
+            <div class="options">
+                <label><input type="radio" name="q12" value="A"> A) O modelo apresenta underfitting, pois não aprendeu bem nem os dados de treino.</label>
+                <label><input type="radio" name="q12" value="B"> B) O modelo apresenta overfitting, pois provavelmente o modelo é muito simples para resolver o problema.</label>
+                <label><input type="radio" name="q12" value="C"> C) O modelo apresenta underfitting, pois tem desempenho baixo em treino e validação.</label>
+                <label><input type="radio" name="q12" value="D"> D) O modelo apresenta overfitting, pois aprendeu os dados de treino mas não generaliza bem para novos dados.</label>
+            </div>
+        </div>
+
+        <!-- Questão 13 -->
+        <div class="question-card">
+            <div class="question-title">Questão 13: Qual a associação correta entre o problema e a função de ativação de saída?<br>
+            1. Classificação binária (ex: fraude sim/não).<br>
+            2. Classificação multiclasse com classes exclusivas (ex: dígitos 0-9).<br>
+            3. Regressão valor contínuo (ex: temperatura).<br>
+            4. Classificação multi-rótulo (ex: tags "gato", "sofá", "janela").</div>
+            <div class="options">
+                <label><input type="radio" name="q13" value="A"> A) 1-Sigmoid, 2-Softmax, 3-Linear, 4-Múltiplas Sigmoids</label>
+                <label><input type="radio" name="q13" value="B"> B) 1-Sigmoid, 2-Softmax, 3-Múltiplas Sigmoids, 4-Linear</label>
+                <label><input type="radio" name="q13" value="C"> C) 1-Sigmoid, 2-Múltiplas Sigmoids, 3-Linear, 4-Softmax</label>
+                <label><input type="radio" name="q13" value="D"> D) 1-Múltiplas Sigmoids, 2-Softmax, 3-Linear, 4-Sigmoid</label>
+            </div>
+        </div>
+
+        <!-- Questão 14 -->
+        <div class="question-card">
+            <div class="question-title">Questão 14: Durante o treinamento de redes neurais profundas, uma técnica para evitar overfitting é o dropout (desativar aleatoriamente neurônios no treino). Qual alternativa descreve seu efeito?</div>
+            <div class="options">
+                <label><input type="radio" name="q14" value="A"> A) O dropout força a rede a não depender excessivamente de neurônios específicos, promovendo representação mais robusta e reduzindo o overfitting.</label>
+                <label><input type="radio" name="q14" value="B"> B) O dropout remove permanentemente neurônios irrelevantes da rede, reduzindo a complexidade de forma definitiva.</label>
+                <label><input type="radio" name="q14" value="C"> C) O dropout equivale a aplicar uma regularização L1, tornando os pesos esparsos.</label>
+                <label><input type="radio" name="q14" value="D"> D) O dropout atua apenas na fase de inferência, desligando neurônios para acelerar a predição.</label>
+            </div>
+        </div>
+
+        <!-- Questão 15 -->
+        <div class="question-card">
+            <div class="question-title">Questão 15: Considere uma rede com 3 entradas, camada oculta com 2 neurônios (ReLU) e saída com 1 neurônio (Sigmoid). W¹ = [[1, 0, -1], [0, 1, 1]], b¹ = [0, 1]ᵀ, W² = [1, 2], b² = 0, x = [1, -1, 2]ᵀ. Calcule a saída a²:</div>
+            <div class="options">
+                <label><input type="radio" name="q15" value="A"> A) σ(-4) ≈ 0.018</label>
+                <label><input type="radio" name="q15" value="B"> B) σ(0) = 0.50</label>
+                <label><input type="radio" name="q15" value="C"> C) σ(4) ≈ 0.982</label>
+                <label><input type="radio" name="q15" value="D"> D) σ(2) ≈ 0.88</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="verificarRespostas()">Verificar Respostas</button>
+        <div id="result"></div>
+    </form>
+</div>
+
+<script>
+    function verificarRespostas() {
+        const gabarito = {
+            q1: 'B',
+            q2: 'C',
+            q3: 'B',
+            q4: 'D',
+            q5: 'D',
+            q6: 'C',
+            q7: 'B',
+            q8: 'C',
+            q9: 'A',
+            q10: 'B',
+            q11: 'C',
+            q12: 'D',
+            q13: 'A',
+            q14: 'A',
+            q15: 'C'
+        };
+
+        let acertos = 0;
+        let total = Object.keys(gabarito).length;
+
+        for (let q in gabarito) {
+            let selecionada = document.querySelector(`input[name="${q}"]:checked`);
+            let cards = document.querySelectorAll(`.question-card`);
+            // Índice da questão
+            let index = parseInt(q.replace('q', '')) - 1;
+            
+            if (selecionada) {
+                if (selecionada.value === gabarito[q]) {
+                    acertos++;
+                    cards[index].style.borderLeft = "5px solid #22c55e"; // Verde
+                } else {
+                    cards[index].style.borderLeft = "5px solid #ef4444"; // Vermelho
+                }
+            } else {
+                cards[index].style.borderLeft = "5px solid #f59e0b"; // Amarelo (não respondida)
+            }
+        }
+
+        document.getElementById('result').innerHTML = `Você acertou ${acertos} de ${total} questões!`;
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
