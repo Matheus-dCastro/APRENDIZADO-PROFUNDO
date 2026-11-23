@@ -1,0 +1,30 @@
+# Python / Jupyter / Ambiente
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*:Zone.Identifier
+
+# Pesos de modelos e saídas de treinamento
+*.pt
+*.pth
+*.onnx
+*.task
+runs/
+
+# Compactados e caches grandes
+*.zip
+*.tar.gz
+*.cache
+
+# Datasets públicos baixados automaticamente pelos notebooks
+**/data/construction-ppe/
+**/data/rps/
+**/data/mediapipe/
+**/data/business-person.png
+**/data/woman_hands.jpg
+
+# Cópias de split geradas automaticamente e fotos brutas antes do preparo
+**/data/meu_dataset_split/
+**/data/meu_detector/yolo/
+**/data/meu_detector/fotos/
